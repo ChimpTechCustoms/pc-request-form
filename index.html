@@ -48,6 +48,13 @@
                 height: 1600px; 
             }
 
+            .banner-img {
+                max-width: 90%;      /* Prevents logo from being wider than screen on mobile */
+                max-height: 80%;     /* Keeps logo inside the banner height vertically */
+                height: auto;        /* Maintains aspect ratio (prevents squishing) */
+                width: auto;         /* Maintains aspect ratio */
+            }
+
             /* --- Mobile Scaling Logic --- */
             @media (max-width: 768px) {
                 iframe {
@@ -67,14 +74,14 @@
     <body>
 
         <div class="header-banner">
-            ChimpTech Services
+            ChimpTech Custom Computing
+            <img src="" alt="ChimpTech Logo" class="banner-img">
         </div>
 
         <div class="form-container">
             <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSc5oE8ncbkKDsYBU0klAI4MiX38eJ46eLc6Gfp_RS73hv4hLA/viewform?embedded=true" 
                 scrolling="no">
-                Loading…
             </iframe>
         </div>
 
