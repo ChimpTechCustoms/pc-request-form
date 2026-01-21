@@ -5,35 +5,78 @@
         <title>ChimpTech Custom Computing Request Form</title>
         <style>
             body {
-                /* Removes default browser margin so the centering is accurate */
                 margin: 0;
-                
-                /* Enables Flexbox layout */
-                display: flex;
-                
-                /* Centers the iframe horizontally */
-                justify-content: center;
-                
-                /* Centers the iframe vertically */
-                align-items: center;
-                
-                /* Forces the body to be at least the height of the screen */
-                min-height: 100vh;
-                
-                /* Optional: Adds a background color to make the form stand out */
                 background-color: #f0f2f5;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+                font-family: sans-serif;
+            }
+
+            /* --- Banner --- */
+            .header-banner {
+                width: 100%;
+                height: 100px;
+                background-color: #333;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                flex-shrink: 0; /* Prevents banner from shrinking */
+            }
+
+            /* --- Form Wrapper --- */
+            /* We wrap the iframe to help control layout */
+            .form-container {
+                width: 100%;
+                max-width: 700px; /* Limits width on big screens for readability */
+                margin-bottom: 50px; /* Adds space at the bottom of the page */
             }
 
             iframe {
-                /* Ensures the form doesn't overflow on small mobile screens */
-                max-width: 100%;
+                width: 100%;
+                border: none;
+                overflow: hidden; /* Hides scrollbar */
                 
-                /* Optional: Adds a shadow for a nicer look */
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                /* LOGIC: 
+                   On Desktop, the form is wider, so it is shorter vertically.
+                   We set a safe baseline height here.
+                */
+                height: 1600px; 
+            }
+
+            /* --- Mobile Scaling Logic --- */
+            @media (max-width: 768px) {
+                iframe {
+                    /* On Mobile, the form gets squeezed. 
+                       Text wraps and elements stack, making the form MUCH taller.
+                       We drastically increase height to prevent internal scrolling.
+                    */
+                    height: 2500px; 
+                }
+                
+                .header-banner {
+                    font-size: 1.2rem; /* Smaller text for mobile banner */
+                }
             }
         </style>
     </head>
     <body>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc5oE8ncbkKDsYBU0klAI4MiX38eJ46eLc6Gfp_RS73hv4hLA/viewform?embedded=true" width="640" height="1182" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+        <div class="header-banner">
+            ChimpTech Services
+        </div>
+
+        <div class="form-container">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSc5oE8ncbkKDsYBU0klAI4MiX38eJ46eLc6Gfp_RS73hv4hLA/viewform?embedded=true" 
+                scrolling="no">
+                Loading…
+            </iframe>
+        </div>
+
     </body>
 </html>
