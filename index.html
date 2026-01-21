@@ -1,10 +1,37 @@
+<!DOCTYPE html>
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        
-    </style>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ChimpTech Custom Computing Request Form</title>
+        <style>
+            body {
+                /* Removes default browser margin so the centering is accurate */
+                margin: 0;
+                
+                /* Enables Flexbox layout */
+                display: flex;
+                
+                /* Centers the iframe horizontally */
+                justify-content: center;
+                
+                /* Centers the iframe vertically */
+                align-items: center;
+                
+                /* Forces the body to be at least the height of the screen */
+                min-height: 100vh;
+                
+                /* Optional: Adds a background color to make the form stand out */
+                background-color: #f0f2f5;
+            }
+
+            iframe {
+                /* Ensures the form doesn't overflow on small mobile screens */
+                max-width: 100%;
+                
+                /* Optional: Adds a shadow for a nicer look */
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+        </style>
     </head>
     <body>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc5oE8ncbkKDsYBU0klAI4MiX38eJ46eLc6Gfp_RS73hv4hLA/viewform?embedded=true" width="640" height="1182" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
